@@ -19,6 +19,8 @@
 		5E7444222666064A003079C1 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7444212666064A003079C1 /* PlusButton.swift */; };
 		5E74442526660C2B003079C1 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74442426660C2B003079C1 /* CartViewController.swift */; };
 		5E74442926660E69003079C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E74442826660E69003079C1 /* SnapKit */; };
+		5E74442C26660F8B003079C1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */; };
+		5E74442F26661E85003079C1 /* AssetsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74442E26661E85003079C1 /* AssetsColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		5E74441A2665FDA7003079C1 /* PlusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusViewController.swift; sourceTree = "<group>"; };
 		5E7444212666064A003079C1 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		5E74442426660C2B003079C1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		5E74442E26661E85003079C1 /* AssetsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				5E7444212666064A003079C1 /* PlusButton.swift */,
+				5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */,
+				5E74442E26661E85003079C1 /* AssetsColor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,9 +200,11 @@
 				5E74441B2665FDA7003079C1 /* PlusViewController.swift in Sources */,
 				5E7444112665FD23003079C1 /* MyPageViewController.swift in Sources */,
 				5E74440E2665FD0A003079C1 /* StoreViewController.swift in Sources */,
+				5E74442F26661E85003079C1 /* AssetsColor.swift in Sources */,
 				5E7444222666064A003079C1 /* PlusButton.swift in Sources */,
 				5E7443FC2665F8AD003079C1 /* HomeViewController.swift in Sources */,
 				5E7443F82665F8AD003079C1 /* AppDelegate.swift in Sources */,
+				5E74442C26660F8B003079C1 /* HomeTableViewCell.swift in Sources */,
 				5E7444172665FD8F003079C1 /* InteriorViewController.swift in Sources */,
 				5E74442526660C2B003079C1 /* CartViewController.swift in Sources */,
 				5E7443FA2665F8AD003079C1 /* SceneDelegate.swift in Sources */,

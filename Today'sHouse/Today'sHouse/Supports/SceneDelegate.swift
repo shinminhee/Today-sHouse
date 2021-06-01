@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-
+        
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         let homeVC = HomeViewController()
@@ -25,14 +25,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         storeVC.tabBarItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart.badge.plus"), tag: 0)
         interiorVC.tabBarItem = UITabBarItem(title: "인테리어시공", image: UIImage(systemName: "person"), tag: 0)
         myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person"), tag: 0)
-//        plusVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "PlusButton"), tag: 0)
-        plusVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.more, tag: 0)
-
+        //        plusVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "PlusButton"), tag: 0)
+//        plusVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.more, tag: 0)
+        plusVC.tabBarItem.image = UIImage(named: "PlusButton")
+        
         let plusNavigation = UINavigationController(rootViewController: plusVC)
         let tabBarController = UITabBarController()
         let homeNavigation = UINavigationController(rootViewController: homeVC)
         let storeNavigation = UINavigationController(rootViewController: storeVC)
         tabBarController.viewControllers = [homeNavigation, storeNavigation, interiorVC, myPageVC, plusNavigation]
+        UINavigationBar.setTransparentTabbar()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }
@@ -68,3 +70,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
 }
 
+extension UINavigationBar {
+    static func setTransparentTabbar() {
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().shadowImage     = UIImage()
+        UINavigationBar.appearance().clipsToBounds   = true
+    } // 네비게이션바 투명하게 처리
+}
