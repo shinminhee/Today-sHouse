@@ -26,14 +26,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         interiorVC.tabBarItem = UITabBarItem(title: "인테리어시공", image: UIImage(systemName: "person"), tag: 0)
         myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person"), tag: 0)
         //        plusVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "PlusButton"), tag: 0)
+        plusVC.tabBarItem = UITabBarItem(title: "", image: UITabBarItem.MyItem.plus.setPlusButton(), tag: 0)
 //        plusVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.more, tag: 0)
-        plusVC.tabBarItem.image = UIImage(named: "PlusButton")
+//        plusVC.tabBarItem.image = UIImage(named: "PlusButton")
         
         let plusNavigation = UINavigationController(rootViewController: plusVC)
         let tabBarController = UITabBarController()
         let homeNavigation = UINavigationController(rootViewController: homeVC)
         let storeNavigation = UINavigationController(rootViewController: storeVC)
-        tabBarController.viewControllers = [homeNavigation, storeNavigation, interiorVC, myPageVC, plusNavigation]
+        tabBarController.viewControllers
+            = [homeNavigation, storeNavigation, interiorVC, myPageVC, plusNavigation]
         UINavigationBar.setTransparentTabbar()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

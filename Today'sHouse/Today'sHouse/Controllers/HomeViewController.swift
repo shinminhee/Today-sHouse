@@ -102,6 +102,7 @@ extension HomeViewController {
         // LeftBarButtonItems 배열을 셋업
         navigationItem.leftBarButtonItems = leftBarButtons
         navigationItem.rightBarButtonItems = [cartBackbarbutton, markBackbarbutton]
+       
     }
     
     final private func setTableView() {
