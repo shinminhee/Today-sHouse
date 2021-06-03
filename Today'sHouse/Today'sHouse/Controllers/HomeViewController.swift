@@ -56,6 +56,7 @@ extension HomeViewController {
         setLayout()
         setBasic()
         setTableView()
+        setNavigation()
     }
     final private func setLayout() {
         view.addSubview(homeTableView)
@@ -86,6 +87,10 @@ extension HomeViewController {
         
     }
     final private func setBasic() {
+     
+       
+    }
+    final private func setNavigation() {
         searchBar.contentMode = .scaleAspectFit
         searchBar.backgroundColor = UIColor.appColor(.lightGray)
         searchBar.layer.cornerRadius = 5
@@ -102,7 +107,6 @@ extension HomeViewController {
         // LeftBarButtonItems 배열을 셋업
         navigationItem.leftBarButtonItems = leftBarButtons
         navigationItem.rightBarButtonItems = [cartBackbarbutton, markBackbarbutton]
-       
     }
     
     final private func setTableView() {

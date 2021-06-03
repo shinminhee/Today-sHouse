@@ -23,19 +23,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let plusButton = UIButton()
         homeVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "map"), tag: 0)
         storeVC.tabBarItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart.badge.plus"), tag: 0)
-        interiorVC.tabBarItem = UITabBarItem(title: "인테리어시공", image: UIImage(systemName: "person"), tag: 0)
+        interiorVC.tabBarItem = UITabBarItem(title: "인테리어시공", image: UIImage(systemName: "wrench.and.screwdriver"), tag: 0)
         myPageVC.tabBarItem = UITabBarItem(title: "마이페이지", image: UIImage(systemName: "person"), tag: 0)
         //        plusVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "PlusButton"), tag: 0)
         plusVC.tabBarItem = UITabBarItem(title: "", image: UITabBarItem.MyItem.plus.setPlusButton(), tag: 0)
 //        plusVC.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarItem.SystemItem.more, tag: 0)
 //        plusVC.tabBarItem.image = UIImage(named: "PlusButton")
         
-        let plusNavigation = UINavigationController(rootViewController: plusVC)
         let tabBarController = UITabBarController()
+        let plusNavigation = UINavigationController(rootViewController: plusVC)
         let homeNavigation = UINavigationController(rootViewController: homeVC)
         let storeNavigation = UINavigationController(rootViewController: storeVC)
+        let interiorNavigation = UINavigationController(rootViewController: interiorVC)
+        let myPageNavigation = UINavigationController(rootViewController: myPageVC)
         tabBarController.viewControllers
-            = [homeNavigation, storeNavigation, interiorVC, myPageVC, plusNavigation]
+            = [homeNavigation, storeNavigation, interiorNavigation, myPageNavigation, plusNavigation]
         UINavigationBar.setTransparentTabbar()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
