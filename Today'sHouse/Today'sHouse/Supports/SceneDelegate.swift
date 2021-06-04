@@ -38,7 +38,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let myPageNavigation = UINavigationController(rootViewController: myPageVC)
         tabBarController.viewControllers
             = [homeNavigation, storeNavigation, interiorNavigation, myPageNavigation, plusNavigation]
-        UINavigationBar.setTransparentTabbar()
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
     }

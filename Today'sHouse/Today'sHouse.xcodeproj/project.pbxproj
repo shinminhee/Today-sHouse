@@ -21,6 +21,11 @@
 		5E74442926660E69003079C1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5E74442826660E69003079C1 /* SnapKit */; };
 		5E74442C26660F8B003079C1 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */; };
 		5E74442F26661E85003079C1 /* AssetsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74442E26661E85003079C1 /* AssetsColor.swift */; };
+		5E74443C266A0D95003079C1 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74443B266A0D95003079C1 /* Store.swift */; };
+		5E74443F266A1653003079C1 /* InteriorTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74443E266A1653003079C1 /* InteriorTopTableViewCell.swift */; };
+		5E744442266A1758003079C1 /* InteriorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744441266A1758003079C1 /* InteriorLabel.swift */; };
+		5E744447266A1E2C003079C1 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */; };
+		5E74444B266A1E7D003079C1 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +44,11 @@
 		5E74442426660C2B003079C1 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		5E74442E26661E85003079C1 /* AssetsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsColor.swift; sourceTree = "<group>"; };
+		5E74443B266A0D95003079C1 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		5E74443E266A1653003079C1 /* InteriorTopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorTopTableViewCell.swift; sourceTree = "<group>"; };
+		5E744441266A1758003079C1 /* InteriorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorLabel.swift; sourceTree = "<group>"; };
+		5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +94,12 @@
 		5E7444132665FD28003079C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E744445266A1DF2003079C1 /* InteriorTableViewCell */,
 				5E7444212666064A003079C1 /* PlusButton.swift */,
 				5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */,
 				5E74442E26661E85003079C1 /* AssetsColor.swift */,
+				5E74443B266A0D95003079C1 /* Store.swift */,
+				5E744441266A1758003079C1 /* InteriorLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -120,6 +133,16 @@
 				5E7444022665F8AF003079C1 /* LaunchScreen.storyboard */,
 			);
 			path = Supports;
+			sourceTree = "<group>";
+		};
+		5E744445266A1DF2003079C1 /* InteriorTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E74443E266A1653003079C1 /* InteriorTopTableViewCell.swift */,
+				5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */,
+				5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */,
+			);
+			path = InteriorTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,15 +220,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E74444B266A1E7D003079C1 /* CategoryCollectionViewCell.swift in Sources */,
 				5E74441B2665FDA7003079C1 /* PlusViewController.swift in Sources */,
 				5E7444112665FD23003079C1 /* MyPageViewController.swift in Sources */,
+				5E744442266A1758003079C1 /* InteriorLabel.swift in Sources */,
 				5E74440E2665FD0A003079C1 /* StoreViewController.swift in Sources */,
+				5E74443C266A0D95003079C1 /* Store.swift in Sources */,
 				5E74442F26661E85003079C1 /* AssetsColor.swift in Sources */,
 				5E7444222666064A003079C1 /* PlusButton.swift in Sources */,
 				5E7443FC2665F8AD003079C1 /* HomeViewController.swift in Sources */,
 				5E7443F82665F8AD003079C1 /* AppDelegate.swift in Sources */,
+				5E74443F266A1653003079C1 /* InteriorTopTableViewCell.swift in Sources */,
 				5E74442C26660F8B003079C1 /* HomeTableViewCell.swift in Sources */,
 				5E7444172665FD8F003079C1 /* InteriorViewController.swift in Sources */,
+				5E744447266A1E2C003079C1 /* AddressTableViewCell.swift in Sources */,
 				5E74442526660C2B003079C1 /* CartViewController.swift in Sources */,
 				5E7443FA2665F8AD003079C1 /* SceneDelegate.swift in Sources */,
 			);
