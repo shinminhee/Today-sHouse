@@ -16,32 +16,56 @@ class HomeViewController: UIViewController {
     let searchBackImage = UIImageView()
     let markBackbarbutton = UIBarButtonItem(image: (UIImage(systemName: "bookmark")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleBarButton(_:)))
     let cartBackbarbutton = UIBarButtonItem(image: (UIImage(systemName: "cart")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleBarButton(_:)))
-    let homeTableView = UITableView()
     
-    
+    lazy var pageCollectionView = UICollectionView(frame: .zero, collectionViewLayout: pageCollectionViewLayout)
+    var pageCollectionViewLayout = UICollectionViewFlowLayout()
+    var customMenuBar = CustomMenuBar()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        view.backgroundColor = .blue
+        view.backgroundColor = .white
         navigationController?.hidesBarsOnSwipe = true
-        
-        
+    
     }
 }
 
-extension HomeViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 50
+extension HomeViewController: CustomMenuBarDelegate {
+    func customMenuBar(scrollTo index: Int) {
+        let indexPath = IndexPath(row: index, section: 0)
+        self.pageCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else { fatalError() }
+}
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = pageCollectionView.dequeueReusableCell(withReuseIdentifier: PageCell.identifier, for: indexPath) as! PageCell
+        cell.label.text = "\(indexPath.row + 1)번째 뷰"
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return CustomMenuBar.homeTabBarText.count
+    }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        customMenuBar.indicatorViewLeadingConstraint.constant = scrollView.contentOffset.x / CGFloat(CustomMenuBar.homeTabBarText.count)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let itemAt = Int(targetContentOffset.pointee.x / self.view.frame.width)
+        let indexPath = IndexPath(item: itemAt, section: 0)
+        customMenuBar.customTabBarCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: [])
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: pageCollectionView.frame.width, height: pageCollectionView.frame.height)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
 }
 
 extension HomeViewController {
@@ -55,14 +79,9 @@ extension HomeViewController {
     final private func setUI() {
         setLayout()
         setBasic()
-        setTableView()
         setNavigation()
     }
     final private func setLayout() {
-        view.addSubview(homeTableView)
-        homeTableView.snp.makeConstraints {
-            $0.leading.top.trailing.bottom.equalToSuperview()
-        }
         view.addSubview(searchBar)
         [searchImage, searchBackImage, searchTextField].forEach {
             searchBar.addSubview($0)
@@ -84,11 +103,30 @@ extension HomeViewController {
             $0.trailing.equalTo(searchBackImage.snp.leading)
             $0.height.equalTo(searchBar)
         }
-        
+        view.addSubview(customMenuBar)
+        customMenuBar.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            $0.height.equalTo(60)
+        }
+        view.addSubview(pageCollectionView)
+        pageCollectionView.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.snp.bottom)
+            $0.top.equalTo(customMenuBar.snp.bottom)
+        }
     }
     final private func setBasic() {
-     
-       
+        
+        customMenuBar.delegate = self
+        pageCollectionViewLayout.scrollDirection = .horizontal
+        pageCollectionView.delegate = self
+        pageCollectionView.dataSource = self
+        pageCollectionView.backgroundColor = .gray
+        pageCollectionView.showsHorizontalScrollIndicator = false
+        pageCollectionView.isPagingEnabled = true
+        pageCollectionView.register(PageCell.self, forCellWithReuseIdentifier: PageCell.identifier)
+        
     }
     final private func setNavigation() {
         searchBar.contentMode = .scaleAspectFit
@@ -108,16 +146,6 @@ extension HomeViewController {
         navigationItem.leftBarButtonItems = leftBarButtons
         navigationItem.rightBarButtonItems = [cartBackbarbutton, markBackbarbutton]
     }
-    
-    final private func setTableView() {
-        homeTableView.dataSource = self
-        homeTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: "HomeTableViewCell")
-        
-        
-
-        
-    }
-    
 }
 
 //// RightBarButtons에 추가할 UIBarButtonItem을 생성

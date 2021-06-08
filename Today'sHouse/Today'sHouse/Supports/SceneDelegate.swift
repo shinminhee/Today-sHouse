@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let interiorVC = InteriorViewController()
         let myPageVC = MyPageViewController()
         let plusVC = PlusViewController()
-        let plusButton = UIButton()
+        UINavigationBar.setTransparentTabbar()
         homeVC.tabBarItem = UITabBarItem(title: "홈", image: UIImage(systemName: "map"), tag: 0)
         storeVC.tabBarItem = UITabBarItem(title: "스토어", image: UIImage(systemName: "cart.badge.plus"), tag: 0)
         interiorVC.tabBarItem = UITabBarItem(title: "인테리어시공", image: UIImage(systemName: "wrench.and.screwdriver"), tag: 0)

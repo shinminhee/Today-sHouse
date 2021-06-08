@@ -26,6 +26,9 @@
 		5E744442266A1758003079C1 /* InteriorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744441266A1758003079C1 /* InteriorLabel.swift */; };
 		5E744447266A1E2C003079C1 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */; };
 		5E74444B266A1E7D003079C1 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */; };
+		5E744454266F6313003079C1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744453266F6313003079C1 /* CustomCell.swift */; };
+		5E744457266F6319003079C1 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744456266F6319003079C1 /* PageCell.swift */; };
+		5E74445A266F632D003079C1 /* CustomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744459266F632D003079C1 /* CustomMenuBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		5E744441266A1758003079C1 /* InteriorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorLabel.swift; sourceTree = "<group>"; };
 		5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E744453266F6313003079C1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		5E744456266F6319003079C1 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
+		5E744459266F632D003079C1 /* CustomMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +100,9 @@
 		5E7444132665FD28003079C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5E74445C266F6C42003079C1 /* HomeTableViewCell */,
 				5E744445266A1DF2003079C1 /* InteriorTableViewCell */,
 				5E7444212666064A003079C1 /* PlusButton.swift */,
-				5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */,
 				5E74442E26661E85003079C1 /* AssetsColor.swift */,
 				5E74443B266A0D95003079C1 /* Store.swift */,
 				5E744441266A1758003079C1 /* InteriorLabel.swift */,
@@ -107,6 +113,8 @@
 		5E7444142665FD2F003079C1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5E744453266F6313003079C1 /* CustomCell.swift */,
+				5E744456266F6319003079C1 /* PageCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -143,6 +151,15 @@
 				5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */,
 			);
 			path = InteriorTableViewCell;
+			sourceTree = "<group>";
+		};
+		5E74445C266F6C42003079C1 /* HomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5E74442B26660F8B003079C1 /* HomeTableViewCell.swift */,
+				5E744459266F632D003079C1 /* CustomMenuBar.swift */,
+			);
+			path = HomeTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +239,7 @@
 			files = (
 				5E74444B266A1E7D003079C1 /* CategoryCollectionViewCell.swift in Sources */,
 				5E74441B2665FDA7003079C1 /* PlusViewController.swift in Sources */,
+				5E744454266F6313003079C1 /* CustomCell.swift in Sources */,
 				5E7444112665FD23003079C1 /* MyPageViewController.swift in Sources */,
 				5E744442266A1758003079C1 /* InteriorLabel.swift in Sources */,
 				5E74440E2665FD0A003079C1 /* StoreViewController.swift in Sources */,
@@ -233,7 +251,9 @@
 				5E74443F266A1653003079C1 /* InteriorTopTableViewCell.swift in Sources */,
 				5E74442C26660F8B003079C1 /* HomeTableViewCell.swift in Sources */,
 				5E7444172665FD8F003079C1 /* InteriorViewController.swift in Sources */,
+				5E744457266F6319003079C1 /* PageCell.swift in Sources */,
 				5E744447266A1E2C003079C1 /* AddressTableViewCell.swift in Sources */,
+				5E74445A266F632D003079C1 /* CustomMenuBar.swift in Sources */,
 				5E74442526660C2B003079C1 /* CartViewController.swift in Sources */,
 				5E7443FA2665F8AD003079C1 /* SceneDelegate.swift in Sources */,
 			);
