@@ -13,6 +13,7 @@ class PageCell: UICollectionViewCell {
     // MARK: - Properties
     static let identifier = "PageCell"
         let label = UILabel()
+    let homeTableView = UITableView()
 
     // MARK: - LifeCycle
     override init(frame: CGRect) {
@@ -30,11 +31,24 @@ class PageCell: UICollectionViewCell {
     }
 }
 
+extension PageCell: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath) as? HomeTableViewCell else { fatalError() }
+        return cell
+    }
+    
+}
+
 // MARK: - UI
 extension PageCell {
     final private func setUI() {
         setBasics()
         setLayout()
+        setTableView()
     }
     final private func setBasics() {
         label.textColor = .black
@@ -48,5 +62,13 @@ extension PageCell {
             $0.centerX.centerY.equalToSuperview()
         }
     }
-   
+    final private func setTableView() {
+        contentView.addSubview(homeTableView)
+        homeTableView.snp.makeConstraints {
+            $0.leading.top.trailing.bottom.equalToSuperview()
+        }
+        homeTableView.dataSource = self
+        homeTableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.identifier)
+
+    }
 }
