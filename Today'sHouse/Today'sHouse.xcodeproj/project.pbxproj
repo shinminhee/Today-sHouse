@@ -29,6 +29,8 @@
 		5E744454266F6313003079C1 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744453266F6313003079C1 /* CustomCell.swift */; };
 		5E744457266F6319003079C1 /* PageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744456266F6319003079C1 /* PageCell.swift */; };
 		5E74445A266F632D003079C1 /* CustomMenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E744459266F632D003079C1 /* CustomMenuBar.swift */; };
+		5E74445F26734815003079C1 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74445E26734815003079C1 /* RequestTableViewCell.swift */; };
+		5E74446426735B35003079C1 /* InteriorTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E74446326735B35003079C1 /* InteriorTypeCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		5E744453266F6313003079C1 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		5E744456266F6319003079C1 /* PageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCell.swift; sourceTree = "<group>"; };
 		5E744459266F632D003079C1 /* CustomMenuBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMenuBar.swift; sourceTree = "<group>"; };
+		5E74445E26734815003079C1 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		5E74446326735B35003079C1 /* InteriorTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteriorTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				5E74443E266A1653003079C1 /* InteriorTopTableViewCell.swift */,
+				5E74446326735B35003079C1 /* InteriorTypeCollectionViewCell.swift */,
+				5E74445E26734815003079C1 /* RequestTableViewCell.swift */,
 				5E744446266A1E2C003079C1 /* AddressTableViewCell.swift */,
 				5E74444A266A1E7D003079C1 /* CategoryCollectionViewCell.swift */,
 			);
@@ -237,7 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E74446426735B35003079C1 /* InteriorTypeCollectionViewCell.swift in Sources */,
 				5E74444B266A1E7D003079C1 /* CategoryCollectionViewCell.swift in Sources */,
+				5E74445F26734815003079C1 /* RequestTableViewCell.swift in Sources */,
 				5E74441B2665FDA7003079C1 /* PlusViewController.swift in Sources */,
 				5E744454266F6313003079C1 /* CustomCell.swift in Sources */,
 				5E7444112665FD23003079C1 /* MyPageViewController.swift in Sources */,

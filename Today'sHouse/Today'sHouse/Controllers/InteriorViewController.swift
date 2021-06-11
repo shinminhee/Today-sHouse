@@ -18,7 +18,8 @@ class InteriorViewController: UIViewController {
     let cartBackbarbutton = UIBarButtonItem(image: (UIImage(systemName: "cart")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)), style: UIBarButtonItem.Style.plain, target: self, action: #selector(handleBarButton(_:)))
     let homeTableView = UITableView(frame: .zero, style: .grouped)
     var store = [Store]()
-    
+    private var lastSelectedIndexPath: IndexPath?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -43,14 +44,25 @@ extension InteriorViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InteriorTopTableViewCell", for: indexPath) as? InteriorTopTableViewCell else { fatalError() }
         switch indexPath {
         case [0, 0]:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "InteriorTopTableViewCell", for: indexPath) as? InteriorTopTableViewCell else { fatalError() }
             cell.selectionStyle = .none // 선택시 배경색상 변경 없앰
-            return cell
-   
+        case [1, 0]:
+            cell.setAddressView()
         default:
             return UITableViewCell()
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? InteriorTopTableViewCell else { return }
+//        homeTableView.deselectRow(at: indexPath, animated: true)
+        if cell.searchView.backgroundColor == .white {
+            cell.requestView.backgroundColor = .blue
+        } else if cell.searchView.backgroundColor == .blue {
+            cell.requestView.backgroundColor = .white
         }
     }
 }
@@ -67,7 +79,7 @@ extension InteriorViewController: UITableViewDelegate {
            case 0:
             return UITableView.automaticDimension
            case 1:
-            return CGFloat(30)
+            return CGFloat(1)
            case 2:
             return CGFloat(5)
            default:
@@ -78,7 +90,7 @@ extension InteriorViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch indexPath {
         case [0, 0]:
-            return 70
+            return 100
         case [1, 0]:
             return 140
         default:

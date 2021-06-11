@@ -18,7 +18,7 @@ class CustomMenuBar: UIView {
     lazy var customTabBarCollectionView = UICollectionView(frame: .zero, collectionViewLayout: customCollectionViewLayout)
     var indicatorView = UIView()
     weak var delegate: CustomMenuBarDelegate?
-    static let homeTabBarText = ["인기", "사진", "집들이", "노하우", "전문가집들이", "질문과답","인기", "사진", "집들이", "노하우", "전문가집들이", "질문과답"]
+    static let homeTabBarText = ["인기", "사진", "집들이", "노하우", "전문가집들이", "질문과답"]
     //MARK: Properties
     var indicatorViewLeadingConstraint:NSLayoutConstraint!
     var indicatorViewWidthConstraint: NSLayoutConstraint!
