@@ -108,7 +108,7 @@ extension InteriorTopTableViewCell {
         changeAddress.layer.borderWidth = 2
         changeAddress.layer.borderColor = UIColor.appColor(.lightGray).cgColor
         changeAddress.layer.cornerRadius = 5
-        address.backgroundColor = .black
+//        address.backgroundColor = .black
         
         typeCollectionLayout.scrollDirection = .horizontal
         typeCollectionLayout.minimumInteritemSpacing = 0
